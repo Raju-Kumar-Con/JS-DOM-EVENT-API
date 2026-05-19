@@ -52,9 +52,13 @@ function renderTable(data) {
         row.appendChild(document.createElement("td"));
 
         // hover events
-        row.addEventListener("mouseenter", () => row.style.background = "#eef");
-        row.addEventListener("mouseleave", () => row.style.background = "");
+        row.addEventListener("mouseenter", () => {
+            row.classList.add("hover");
+        });
 
+        row.addEventListener("mouseleave", () => {
+            row.classList.remove("hover");
+        });
         tableBody.appendChild(row);
     });
 }
@@ -157,7 +161,7 @@ async function handleSave(row) {
         inputs.forEach(input => {
             input.replaceWith(document.createTextNode(input.value || "N/A"));
         });
-
+        alert("Save Successfull");
         row.cells[9].innerHTML = "";
         unsavedRow = false;
 

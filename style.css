@@ -10,18 +10,26 @@ table {
 }
 
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     padding: 8px;
     text-align: center;
 }
 
 th {
     cursor: pointer;
-    background: #f4f4f4;
+    background: #99c3ff;
+}
+.hover {
+    background-color: #99c3ff !important;
 }
 
-tr:hover {
-    background: #f9f9f9;
+/* Alternate row colors */
+#dataTable tbody tr:nth-child(odd) {
+    background-color: #f9fbff;
+}
+
+#dataTable tbody tr:nth-child(even) {
+    background-color: #e6f0ff;
 }
 
 .invalid {
